@@ -1,6 +1,5 @@
 package com.example.tugasbesarrpl
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,19 +7,19 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.card_view_item.view.*
 
-class PostAdapter(private val listPost: ArrayList<User>) :
+class PostAdapter(private val listPost: ArrayList<Post>) :
     RecyclerView.Adapter<PostAdapter.CardViewViewHolder>() {
-    internal var users = arrayListOf<User>()
+    internal var posts = arrayListOf<Post>()
 
     inner class CardViewViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(post: User) {
+        fun bind(post: Post) {
             with(itemView) {
-                judul_card.text = post.name
+                judul_card.text = post.title
 
                 itemView.setOnClickListener {
                     Toast.makeText(
                         itemView.context,
-                        "Kamu memilih " + post.name,
+                        "Kamu memilih " + post.title,
                         Toast.LENGTH_SHORT
                     ).show()
 //                    val moveDetail = Intent(itemView.context, DetailActivity::class.java)

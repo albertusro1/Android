@@ -8,12 +8,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_sign_up.view.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var adapter: PostAdapter
     private lateinit var rvUser: RecyclerView
     private lateinit var dataName: Array<String>
-    private var users: ArrayList<User> = arrayListOf()
+    private var posts: ArrayList<Post> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         rvUser = findViewById(R.id.recycler_post)
         rvUser.setHasFixedSize(true)
 
-        adapter = PostAdapter(users)
+        adapter = PostAdapter(posts)
         rvUser.adapter = adapter
 
         prepare()
@@ -38,23 +39,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun prepare() {
-        dataName = resources.getStringArray(R.array.name)
-//        dataUserName = resources.getStringArray(R.array.username)
-//        dataPhoto = resources.obtainTypedArray(R.array.avatar)
-//        dataLocation = resources.getStringArray(R.array.location)
-//        dataFollowers = resources.getStringArray(R.array.followers)
-//        dataFollowing = resources.getStringArray(R.array.following)
-//        dataCompany = resources.getStringArray(R.array.company)
-//        dataRepository = resources.getStringArray(R.array.repository)
+        dataName = resources.getStringArray(R.array.title)
     }
 
     private fun addItem() {
         for (position in dataName.indices) {
-            val user = User(
+            val post = Post(
                 dataName[position]
             )
-            users.add(user)
+            posts.add(post)
         }
-        adapter.users = users
+        adapter.posts = posts
     }
 }

@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">TugasBesarRPL</string>
 
-    <string-array name="name">
-        <item>Jake Wharton</item>
-        <item>Amit Shekhar</item>
-        <item>Romain Guy</item>
-        <item>Chris Banes</item>
-        <item>David</item>
-        <item>Ravi Tamada</item>
-        <item>Deny Prasetyo</item>
-        <item>Budi Oktaviyan</item>
-        <item>Hendi Santika</item>
-        <item>Sidiq Permana</item>
+    <string-array name="title">
+        <item>Post 1</item>
+        <item>Post 2</item>
+        <item>Post 3</item>
+        <item>Post 4</item>
+        <item>Post 5</item>
+        <item>Post 6</item>
+        <item>Post 7</item>
+        <item>Post 8</item>
+        <item>Post 9</item>
+        <item>Post 10</item>
     </string-array>
 </resources>

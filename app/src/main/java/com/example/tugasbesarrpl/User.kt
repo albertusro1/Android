@@ -1,18 +1,15 @@
 package com.example.tugasbesarrpl
 
-import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
 
-@Parcelize
-data class User (
-    var name: String?
-//    var phone: String?,
-//    var address: String?
+abstract class User {
+    var name: String? = null
+    var phone: String? = null
+    var address: String? = null
 
-//    constructor() {}
-//    constructor(name: String?, phone: String?, address: String?) {
-//        this.name = name
-//        this.phone = phone
-//        this.address = address
-//    }
-):Parcelable
+    constructor() {}
+    constructor(name: String?, phone: String?, address: String?) {
+        this.name = name
+        this.phone = phone
+        this.address = address
+    }
+}

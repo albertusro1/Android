@@ -8,15 +8,16 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_sign_up.*
+import kotlin.collections.hashMapOf as hashMapOf1
 
 class SignUpActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     lateinit var name: EditText
     lateinit var email: EditText
-    lateinit var password: EditText
-    lateinit var phone: EditText
-    lateinit var address: EditText
+//    lateinit var password: EditText
+//    lateinit var phone: EditText
+//    lateinit var address: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,9 +26,9 @@ class SignUpActivity : AppCompatActivity() {
 
         name = findViewById(R.id.tv_name)
         email = findViewById(R.id.tv_username)
-        password = findViewById(R.id.tv_password)
-        phone = findViewById(R.id.tv_phone)
-        address = findViewById(R.id.tv_address)
+//        password = findViewById(R.id.tv_password)
+//        phone = findViewById(R.id.tv_phone)
+//        address = findViewById(R.id.tv_address)
 
         btn_sign_up.setOnClickListener{
             registerUser()
@@ -59,11 +60,6 @@ class SignUpActivity : AppCompatActivity() {
         )
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val user = User(
-                        name.toString()
-//                        phone.toString(),
-//                        address.toString()
-                    )
                     startActivity(Intent(this, LoginActivity::class.java))
                     finish()
                 } else {
