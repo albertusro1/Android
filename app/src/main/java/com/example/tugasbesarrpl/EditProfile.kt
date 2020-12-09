@@ -58,4 +58,9 @@ class EditProfile : AppCompatActivity() {
         startActivity(Intent(this, ProfileActivity::class.java))
         finish()
     }
+
+    override fun onBackPressed() {
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
+    }
 }

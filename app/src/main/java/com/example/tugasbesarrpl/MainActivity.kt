@@ -51,7 +51,9 @@ class MainActivity : AppCompatActivity() {
                         .show()
                 }
             })
-        } else {}
+        } else {
+            txt_name.setText("Halo, Tamu")
+        }
 
         prepare()
         addItem()
@@ -67,8 +69,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun profile(view: View)   {
-        startActivity(Intent(this, ProfileActivity::class.java))
-        finish()
+        if(auth.currentUser != null){
+            startActivity(Intent(this, ProfileActivity::class.java))
+            finish()
+        }
+        else{
+            Toast.makeText(this@MainActivity, "Tamu tidak dapat mengakses fitur ini", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun prepare() {

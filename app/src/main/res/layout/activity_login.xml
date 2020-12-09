@@ -34,10 +34,23 @@
             android:layout_marginTop="10dp"
             android:background="@color/colorPrimaryDark"
             android:padding="16dp"
-            android:text="Login"
+            android:text="Masuk"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_log_in_guest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimaryDark"
+            android:padding="16dp"
+            android:text="Masuk sebagai tamu"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:onClick="guest"/>
     </LinearLayout>
 
     <Button

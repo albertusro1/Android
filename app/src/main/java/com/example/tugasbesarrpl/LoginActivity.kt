@@ -3,6 +3,7 @@ package com.example.tugasbesarrpl
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -58,6 +59,11 @@ class LoginActivity : AppCompatActivity() {
             }
     }
 
+    fun guest(view: View){
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
+    }
+
     public override fun onStart() {
         super.onStart()
         val currentUser = auth.currentUser
@@ -70,7 +76,7 @@ class LoginActivity : AppCompatActivity() {
             finish()
         } else {
             Toast.makeText(
-                baseContext, "Login failed.",
+                baseContext, "Please Login.",
                 Toast.LENGTH_SHORT
             ).show()
         }
