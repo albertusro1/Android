@@ -3,73 +3,103 @@ package com.example.tugasbesarrpl
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
+import android.view.View
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_sign_up.*
-import kotlin.collections.hashMapOf as hashMapOf1
 
-class SignUpActivity : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
-    lateinit var name: EditText
-    lateinit var email: EditText
-//    lateinit var password: EditText
-//    lateinit var phone: EditText
-//    lateinit var address: EditText
+class SignUpActivity : AppCompatActivity(), View.OnClickListener {
+
+    private var editTextName: EditText? = null
+    private var editTextEmail:EditText? = null
+    private var editTextPassword:EditText? = null
+    private var editTextPhone:EditText? = null
+    private var editTextAddress:EditText? = null
+
+    private var mAuth: FirebaseAuth? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
-        auth = FirebaseAuth.getInstance()
 
-        name = findViewById(R.id.tv_name)
-        email = findViewById(R.id.tv_username)
-//        password = findViewById(R.id.tv_password)
-//        phone = findViewById(R.id.tv_phone)
-//        address = findViewById(R.id.tv_address)
+        editTextName = findViewById(R.id.tv_name)
+        editTextEmail = findViewById(R.id.tv_username)
+        editTextPassword = findViewById(R.id.tv_password)
+        editTextPhone = findViewById(R.id.tv_phone)
+        editTextAddress = findViewById(R.id.tv_address)
+        mAuth = FirebaseAuth.getInstance()
+    }
 
-        btn_sign_up.setOnClickListener{
-            registerUser()
+    override fun onStart() {
+        super.onStart()
+        if (mAuth!!.currentUser != null) {
+            //handle the already login user
         }
     }
 
-    private fun registerUser(){
-        if (tv_username.text.toString().isEmpty()) {
-            tv_username.error = "Please enter email"
-            tv_username.requestFocus()
+    private fun registerUser() {
+        val name = editTextName!!.text.toString()
+        val email: String = editTextEmail?.text.toString().trim()
+        val password: String = editTextPassword?.text.toString().trim()
+        val phone: String = editTextPhone?.text.toString().trim()
+        val address: String = editTextAddress?.text.toString().trim()
+
+        if (email.isEmpty()) {
+            editTextEmail?.error = "Input your email"
+            editTextEmail?.requestFocus()
             return
         }
-
-        if (!Patterns.EMAIL_ADDRESS.matcher(tv_username.text.toString()).matches()) {
-            tv_username.error = "Please enter valid email"
-            tv_username.requestFocus()
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            editTextEmail?.error = "This email has already been used"
+            editTextEmail?.requestFocus()
             return
         }
-
-        if (tv_password.text.toString().isEmpty()) {
-            tv_password.error = "Please enter password"
-            tv_password.requestFocus()
+        if (password.isEmpty()) {
+            editTextPassword?.error = "Input your password"
+            editTextPassword?.requestFocus()
             return
         }
-
-        auth.createUserWithEmailAndPassword(
-            tv_username.text.toString(),
-            tv_password.text.toString()
-        )
-            .addOnCompleteListener(this) { task ->
+        mAuth!!.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    startActivity(Intent(this, LoginActivity::class.java))
-                    finish()
+                    val user = User(
+                        name,
+                        email,
+                        phone,
+                        address
+                    )
+                    FirebaseDatabase.getInstance().getReference("Users")
+                        .child(FirebaseAuth.getInstance().currentUser!!.uid)
+                        .setValue(user).addOnCompleteListener(OnCompleteListener<Void?> { task ->
+                            if (task.isSuccessful) {
+                                Toast.makeText(
+                                    this@SignUpActivity,
+                                    getString(R.string.registration_success),
+                                    Toast.LENGTH_LONG
+                                ).show()
+                                startActivity(Intent(this, LoginActivity::class.java))
+                                finish()
+                            } else {
+                                //display a failure message
+                            }
+                        })
                 } else {
-                    Toast.makeText(
-                        baseContext, "Sign Up failed. Try again after some time.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(this@SignUpActivity, task.exception!!.message, Toast.LENGTH_LONG)
+                        .show()
                 }
-
             }
+    }
+
+    override fun onClick(v: View) {
+        when (v.getId()) {
+            R.id.btn_sign_up -> registerUser()
+        }
     }
 }
 

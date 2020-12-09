@@ -13,4 +13,6 @@
         <item>Post 9</item>
         <item>Post 10</item>
     </string-array>
+
+    <string name="registration_success">Registered Successfully</string>
 </resources>
