@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             myref.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     val userModel: User? = dataSnapshot.getValue(User::class.java)
-                    txt_name.setText("Hello, " + userModel?.name)
+                    txt_name.setText("Halo, " + userModel?.name)
                 }
 
                 override fun onCancelled(databaseError: DatabaseError) {
