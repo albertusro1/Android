@@ -1,10 +1,10 @@
 package com.example.tugasbesarrpl
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -21,7 +21,6 @@ class EditPost : AppCompatActivity() {
     private lateinit var slot: TextInputLayout
     private lateinit var gaji: TextInputLayout
 
-    @SuppressLint("CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_post)
@@ -55,14 +54,19 @@ class EditPost : AppCompatActivity() {
             if (gaji.isNotEmpty()) {
                 myref.child("gaji").setValue(gaji)
             }
-            startActivity(Intent(this, MainActivity::class.java))
+            Toast.makeText(
+                this,
+                "Post berhasil diedit",
+                Toast.LENGTH_SHORT
+            ).show()
+            startActivity(Intent(applicationContext, MainActivity::class.java))
             finish()
         }
 
     }
 
     fun editback(view: View) {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(applicationContext, MainActivity::class.java))
         finish()
     }
 }

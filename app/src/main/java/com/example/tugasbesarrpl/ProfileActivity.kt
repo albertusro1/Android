@@ -30,10 +30,10 @@ class ProfileActivity : AppCompatActivity() {
             myref.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     val userModel: User? = dataSnapshot.getValue(User::class.java)
-                    prof_name.setText(userModel?.name)
-                    prof_email.setText(userModel?.email)
-                    prof_phone.setText(userModel?.phone)
-                    prof_address.setText(userModel?.address)
+                    prof_name.text = (userModel?.name)
+                    prof_email.text = (userModel?.email)
+                    prof_phone.text = (userModel?.phone)
+                    prof_address.text = (userModel?.address)
                 }
 
                 override fun onCancelled(databaseError: DatabaseError) {
@@ -48,17 +48,17 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     fun back(view: View)   {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(applicationContext, MainActivity::class.java))
         finish()
     }
 
     fun editprof(view: View)   {
-        startActivity(Intent(this, EditProfile::class.java))
+        startActivity(Intent(applicationContext, EditProfile::class.java))
         finish()
     }
 
     override fun onBackPressed() {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(applicationContext, MainActivity::class.java))
         finish()
     }
 }

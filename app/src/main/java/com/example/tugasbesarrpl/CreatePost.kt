@@ -89,7 +89,6 @@ class CreatePost : AppCompatActivity() {
                                 }
                             })
                     }
-
                     override fun onCancelled(databaseError: DatabaseError) {
                         Toast.makeText(
                             this@CreatePost,
@@ -98,18 +97,18 @@ class CreatePost : AppCompatActivity() {
                         ).show()
                     }
                 })
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(applicationContext, MainActivity::class.java))
                 finish()
             }
         }
     }
-    fun backprofile(view: View)   {
-        startActivity(Intent(this, MainActivity::class.java))
+    fun backpost(view: View)   {
+        startActivity(Intent(applicationContext, MainActivity::class.java))
         finish()
     }
 
     override fun onBackPressed() {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(applicationContext, MainActivity::class.java))
         finish()
     }
 }

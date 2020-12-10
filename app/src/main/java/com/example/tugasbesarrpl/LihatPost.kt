@@ -105,7 +105,7 @@ class LihatPost : AppCompatActivity() {
     }
 
     fun lihatback(view: View){
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(applicationContext, MainActivity::class.java))
         finish()
     }
 }

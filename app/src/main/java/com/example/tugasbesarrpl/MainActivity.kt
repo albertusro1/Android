@@ -73,7 +73,6 @@ class MainActivity : AppCompatActivity() {
                     val userModel: User? = dataSnapshot.getValue(User::class.java)
                     txt_name.setText("Halo, " + userModel?.name)
                 }
-
                 override fun onCancelled(databaseError: DatabaseError) {
                     Toast.makeText(this@MainActivity, "" + databaseError.code, Toast.LENGTH_SHORT)
                         .show()
@@ -86,13 +85,13 @@ class MainActivity : AppCompatActivity() {
 
     fun logout(view: View) {
         FirebaseAuth.getInstance().signOut()
-        startActivity(Intent(this, LoginActivity::class.java))
+        startActivity(Intent(applicationContext, LoginActivity::class.java))
         finish()
     }
 
     fun profile(view: View) {
         if (auth.currentUser != null) {
-            startActivity(Intent(this, ProfileActivity::class.java))
+            startActivity(Intent(applicationContext, ProfileActivity::class.java))
             finish()
         } else {
             Toast.makeText(
@@ -105,8 +104,7 @@ class MainActivity : AppCompatActivity() {
 
     fun c_post(view: View) {
         if (auth.currentUser != null) {
-            startActivity(Intent(this, CreatePost::class.java))
-            finish()
+            startActivity(Intent(applicationContext, CreatePost::class.java))
         } else {
             Toast.makeText(
                 this@MainActivity,

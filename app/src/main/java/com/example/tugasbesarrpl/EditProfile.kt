@@ -3,6 +3,7 @@ package com.example.tugasbesarrpl
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
@@ -47,20 +48,24 @@ class EditProfile : AppCompatActivity() {
                 if(editaddress.isNotEmpty()){
                     myref.child("address").setValue(editaddress)
                 }
-
-                startActivity(Intent(this, ProfileActivity::class.java))
+                Toast.makeText(
+                    this,
+                    "Profil berhasil diedit",
+                    Toast.LENGTH_SHORT
+                ).show()
+                startActivity(Intent(applicationContext, ProfileActivity::class.java))
                 finish()
             } else {}
         }
     }
 
     fun backprofile(view: View)   {
-        startActivity(Intent(this, ProfileActivity::class.java))
+        startActivity(Intent(applicationContext, ProfileActivity::class.java))
         finish()
     }
 
     override fun onBackPressed() {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(applicationContext, MainActivity::class.java))
         finish()
     }
 }
