@@ -1,5 +1,6 @@
 package com.example.tugasbesarrpl
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -20,6 +21,7 @@ class EditPost : AppCompatActivity() {
     private lateinit var slot: TextInputLayout
     private lateinit var gaji: TextInputLayout
 
+    @SuppressLint("CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_post)
@@ -33,6 +35,8 @@ class EditPost : AppCompatActivity() {
         desc = findViewById(R.id.editpost_desc)
         slot = findViewById(R.id.editpost_slot)
         gaji = findViewById(R.id.editpost_gaji)
+
+        textView4.text = message
 
         btn_saveeditpost.setOnClickListener {
             val database = FirebaseDatabase.getInstance()
