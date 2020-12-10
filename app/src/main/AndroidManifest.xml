@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditProfile"></activity>
+        <activity android:name=".EditPost"></activity>
+        <activity android:name=".LihatPost" />
+        <activity android:name=".CreatePost" />
+        <activity android:name=".EditProfile" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SignUpActivity" />

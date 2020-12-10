@@ -26,9 +26,9 @@ class EditProfile : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         database = Firebase.database.reference
 
-        editname = findViewById(R.id.editname)
-        editphone = findViewById(R.id.editphone)
-        editaddress = findViewById(R.id.editaddress)
+        editname = findViewById(R.id.editprof_nama)
+        editphone = findViewById(R.id.editprof_phone)
+        editaddress = findViewById(R.id.editprof_address)
 
         btn_saveeditprof.setOnClickListener {
             if (auth.currentUser != null) {

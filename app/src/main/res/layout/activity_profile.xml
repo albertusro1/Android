@@ -98,7 +98,7 @@
         android:onClick="editprof"/>
 
     <TextView
-        android:id="@+id/namesign"
+        android:id="@+id/namapekerjaan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -118,7 +118,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/phonesign"
+        android:id="@+id/deskripsipekerjaan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -128,7 +128,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/addresssign"
+        android:id="@+id/gajipekerjaan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
