@@ -65,6 +65,21 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
             editTextPassword?.requestFocus()
             return
         }
+        if (name.isEmpty()) {
+            editTextName?.error = "Input your name"
+            editTextName?.requestFocus()
+            return
+        }
+        if (phone.isEmpty()) {
+            editTextPhone?.error = "Input your phone"
+            editTextPhone?.requestFocus()
+            return
+        }
+        if (address.isEmpty()) {
+            editTextAddress?.error = "Input your address"
+            editTextAddress?.requestFocus()
+            return
+        }
         mAuth!!.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {

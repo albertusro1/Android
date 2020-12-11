@@ -104,7 +104,7 @@ class LihatPost : AppCompatActivity() {
         }
     }
 
-    fun lihatback(view: View){
+    override fun onBackPressed() {
         startActivity(Intent(applicationContext, MainActivity::class.java))
         finish()
     }

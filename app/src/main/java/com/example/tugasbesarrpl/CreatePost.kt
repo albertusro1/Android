@@ -81,7 +81,7 @@ class CreatePost : AppCompatActivity() {
                                 if (task.isSuccessful) {
                                     Toast.makeText(
                                         this@CreatePost,
-                                        "Post berhasil dibuat",
+                                        "Pos lowongan berhasil dibuat",
                                         Toast.LENGTH_LONG
                                     ).show()
                                 } else {
@@ -101,10 +101,6 @@ class CreatePost : AppCompatActivity() {
                 finish()
             }
         }
-    }
-    fun backpost(view: View)   {
-        startActivity(Intent(applicationContext, MainActivity::class.java))
-        finish()
     }
 
     override fun onBackPressed() {

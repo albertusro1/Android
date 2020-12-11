@@ -47,11 +47,6 @@ class ProfileActivity : AppCompatActivity() {
         } else {}
     }
 
-    fun back(view: View)   {
-        startActivity(Intent(applicationContext, MainActivity::class.java))
-        finish()
-    }
-
     fun editprof(view: View)   {
         startActivity(Intent(applicationContext, EditProfile::class.java))
         finish()

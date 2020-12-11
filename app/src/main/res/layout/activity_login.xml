@@ -4,19 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
     tools:context=".LoginActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:textSize="50dp"
+        android:text="Login"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+        android:textColor="@color/colorPrimary"/>
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_centerVertical="true"
         android:padding="16dp">
 
         <EditText
             android:id="@+id/tv_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_email"
+            android:drawablePadding="5dp"
             android:hint="email"
             android:inputType="textEmailAddress" />
 
@@ -24,16 +38,19 @@
             android:id="@+id/tv_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="password"
+            android:drawableLeft="@drawable/ic_password"
+            android:drawablePadding="5dp"
+            android:hint="kata sandi"
             android:inputType="textPassword" />
 
         <Button
             android:id="@+id/btn_log_in"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@color/colorPrimaryDark"
             android:padding="16dp"
+            android:layout_gravity="center"
             android:text="Masuk"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
@@ -41,9 +58,10 @@
 
         <Button
             android:id="@+id/btn_log_in_guest"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_gravity="center"
             android:background="@color/colorPrimaryDark"
             android:padding="16dp"
             android:text="Masuk sebagai tamu"
@@ -60,7 +78,7 @@
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimaryDark"
         android:padding="16dp"
-        android:text="Don't have an account?"
+        android:text="Tidak punya akun? Klik ini untuk daftar"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="18sp" />

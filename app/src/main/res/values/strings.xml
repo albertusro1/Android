@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TugasBesarRPL</string>
+    <string name="app_name">Kerja Yuk!</string>
 
     <string-array name="title">
         <item>Post 1</item>
@@ -14,5 +14,5 @@
         <item>Post 10</item>
     </string-array>
 
-    <string name="registration_success">Registered Successfully</string>
+    <string name="registration_success">Pendaftaran berhasil</string>
 </resources>

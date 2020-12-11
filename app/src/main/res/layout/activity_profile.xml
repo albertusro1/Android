@@ -4,66 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryBackground"
+    android:padding="20dp"
     tools:context=".ProfileActivity">
 
-    <ImageView
-        android:id="@+id/img_profile"
-        android:layout_width="174dp"
-        android:layout_height="151dp"
-        android:layout_marginTop="44dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorFormBackground"
+        android:orientation="vertical"
+        android:padding="10dp"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/group_1__1_" />
+        tools:layout_editor_absoluteX="20dp">
 
-    <TextView
-        android:id="@+id/prof_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="48dp"
-        android:text="TextView"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_profile" />
+        <ImageView
+            android:id="@+id/img_profile"
+            android:layout_width="174dp"
+            android:layout_height="151dp"
+            android:layout_gravity="center"
+            android:src="@drawable/group_1__1_" />
 
-    <TextView
-        android:id="@+id/prof_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="36dp"
-        android:text="TextView"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prof_name" />
+        <TextView
+            android:id="@+id/namapekerjaan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Nama"
+            app:layout_constraintBottom_toTopOf="@+id/prof_name"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/prof_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="44dp"
-        android:text="TextView"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prof_email" />
+        <TextView
+            android:id="@+id/prof_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/prof_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="36dp"
-        android:text="TextView"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prof_phone" />
+        <TextView
+            android:id="@+id/emailsign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Email"
+            app:layout_constraintBottom_toTopOf="@+id/prof_email"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/prof_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/deskripsipekerjaan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Nomor Telepon"
+            app:layout_constraintBottom_toTopOf="@+id/prof_phone"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/prof_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/gajipekerjaan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Alamat"
+            app:layout_constraintBottom_toTopOf="@+id/prof_address"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/prof_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="414dp"
@@ -74,67 +101,20 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_saveeditprof"
-        app:layout_constraintVertical_bias="1.0"></LinearLayout>
+        app:layout_constraintVertical_bias="1.0">
 
-    <ImageButton
-        android:id="@+id/btn_back"
-        android:layout_width="64dp"
-        android:layout_height="50dp"
-        android:onClick="back"
-        android:src="@drawable/abc_vector_test"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_editprof"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="EDIT PROFIL"
+        android:layout_marginTop="20dp"
+        android:onClick="editprof"
+        android:text="UBAH PROFIL"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prof_address"
-        android:onClick="editprof"/>
-
-    <TextView
-        android:id="@+id/namapekerjaan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:text="Nama"
-        app:layout_constraintBottom_toTopOf="@+id/prof_name"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/emailsign"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:text="Email"
-        app:layout_constraintBottom_toTopOf="@+id/prof_email"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/deskripsipekerjaan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:text="Nomor Telepon"
-        app:layout_constraintBottom_toTopOf="@+id/prof_phone"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/gajipekerjaan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:text="Alamat"
-        app:layout_constraintBottom_toTopOf="@+id/prof_address"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.example.tugasbesarrpl
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
@@ -16,9 +17,9 @@ class EditProfile : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
 
-    private lateinit var editname: TextInputLayout
-    private lateinit var editphone: TextInputLayout
-    private lateinit var editaddress: TextInputLayout
+    private lateinit var editname: EditText
+    private lateinit var editphone: EditText
+    private lateinit var editaddress: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,9 +35,9 @@ class EditProfile : AppCompatActivity() {
         btn_saveeditprof.setOnClickListener {
             if (auth.currentUser != null) {
                 val database = FirebaseDatabase.getInstance()
-                val editname = editname.editText?.text.toString().trim()
-                val editphone = editphone.editText?.text.toString().trim()
-                val editaddress = editaddress.editText?.text.toString().trim()
+                val editname = editname.text.toString().trim()
+                val editphone = editphone.text.toString().trim()
+                val editaddress = editaddress.text.toString().trim()
                 val myref = database.getReference("Users").child(auth.currentUser!!.uid)
 
                 if(editname.isNotEmpty()){
@@ -50,7 +51,7 @@ class EditProfile : AppCompatActivity() {
                 }
                 Toast.makeText(
                     this,
-                    "Profil berhasil diedit",
+                    "Profil berhasil diubah",
                     Toast.LENGTH_SHORT
                 ).show()
                 startActivity(Intent(applicationContext, ProfileActivity::class.java))
@@ -59,13 +60,8 @@ class EditProfile : AppCompatActivity() {
         }
     }
 
-    fun backprofile(view: View)   {
-        startActivity(Intent(applicationContext, ProfileActivity::class.java))
-        finish()
-    }
-
     override fun onBackPressed() {
-        startActivity(Intent(applicationContext, MainActivity::class.java))
+        startActivity(Intent(applicationContext, ProfileActivity::class.java))
         finish()
     }
 }

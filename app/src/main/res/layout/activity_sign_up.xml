@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/colorPrimaryBackground"
+    android:padding="20dp"
     tools:context=".LoginActivity">
 
     <LinearLayout
+        android:background="@color/colorFormBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -17,13 +19,14 @@
             android:id="@+id/logo_account"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:src="@drawable/group_1__1_"
             android:layout_gravity="center" />
 
         <EditText
             android:id="@+id/tv_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="full name"
+            android:hint="nama lengkap"
             android:inputType="text" />
 
         <EditText
@@ -37,31 +40,32 @@
             android:id="@+id/tv_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="password"
+            android:hint="kata sandi"
             android:inputType="textPassword" />
 
         <EditText
             android:id="@+id/tv_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="phone number"
+            android:hint="nomor telepon"
             android:inputType="number" />
 
         <EditText
             android:id="@+id/tv_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="address"
+            android:hint="alamat"
             android:inputType="textLongMessage" />
 
         <Button
             android:id="@+id/btn_sign_up"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@color/colorPrimaryDark"
             android:padding="16dp"
-            android:text="Sign Up"
+            android:text="Daftar"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="18sp"

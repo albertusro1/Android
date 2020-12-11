@@ -3,122 +3,81 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryBackground"
+    android:padding="20dp"
+    tools:context=".CreatePost">
 
-    <ImageView
-        android:id="@+id/img_profile"
-        android:layout_width="174dp"
-        android:layout_height="151dp"
-        android:layout_marginTop="44dp"
-        android:src="@drawable/group_1__1_"
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="Ubah Profil"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+        android:textColor="@color/colorFormBackground"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="414dp"
-        android:layout_height="112dp"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorFormBackground"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_saveeditprof"
-        app:layout_constraintVertical_bias="1.0"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
 
-    <ImageButton
-        android:id="@+id/btn_back"
-        android:layout_width="64dp"
-        android:layout_height="50dp"
-        android:onClick="backprofile"
-        android:src="@drawable/abc_vector_test"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nama" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editprof_nama"
-        android:layout_width="363dp"
-        android:layout_height="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/namapekerjaan">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="274dp"
-            android:layout_height="32dp"
+        <EditText
+            android:id="@+id/editprof_nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Masukkan nama" />
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/deskripsipekerjaan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="32dp"
-        android:text="Nomor Telepon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editprof_nama" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nomor Telepon" />
 
-    <TextView
-        android:id="@+id/gajipekerjaan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="36dp"
-        android:text="Alamat"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editprof_phone" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editprof_phone"
-        android:layout_width="363dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deskripsipekerjaan">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="274dp"
-            android:layout_height="32dp"
+        <EditText
+            android:id="@+id/editprof_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Masukkan nomor telepon" />
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/namapekerjaan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="36dp"
-        android:text="Nama"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_profile" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alamat" />
+
+        <EditText
+            android:id="@+id/editprof_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan alamat" />
+
+    </LinearLayout>
 
     <Button
+        android:layout_marginTop="20dp"
         android:id="@+id/btn_saveeditprof"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="SIMPAN"
+        android:text="kirim"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editprof_address" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editprof_address"
-        android:layout_width="363dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gajipekerjaan">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="274dp"
-            android:layout_height="32dp"
-            android:hint="Masukkan alamat" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

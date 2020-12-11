@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryBackground"
     android:padding="20dp"
     tools:context=".CreatePost">
 
@@ -11,21 +12,24 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CREATE POST"
+        android:layout_marginTop="68dp"
+        android:text="Buat Pos Lowongan"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+        android:textColor="@color/colorFormBackground"
         android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
         android:id="@+id/linearLayout"
-        android:layout_width="371dp"
-        android:layout_height="446dp"
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorFormBackground"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +55,7 @@
             android:id="@+id/et_post_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Masukkan lokasi pekerjaan" />
+            android:hint="Masukkan deskripsi tambahan" />
 
         <TextView
             android:layout_width="match_parent"
@@ -75,21 +79,17 @@
             android:layout_height="wrap_content"
             android:hint="Masukkan gaji" />
 
-        <Button
-            android:id="@+id/btn_post"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Post"
-            android:onClick="addPost" />
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/back_btn"
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="addPost"
+        android:text="kirim"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/abc_vector_test"
-        android:onClick="backpost"/>
+        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
